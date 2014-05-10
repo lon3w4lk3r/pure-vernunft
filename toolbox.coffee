@@ -30,3 +30,10 @@ exports.StreamGridFile = (req, res, GridFile) ->
     res.header 'Content-Length', GridFile.length
     stream = GridFile.stream true
     stream.pipe res
+  this
+
+exports.ensureAuthenticated = (req, res, next) ->
+  if req.isAuthenticated()
+    return next()
+  else
+    res.redirect '/'

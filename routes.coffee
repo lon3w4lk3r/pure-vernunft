@@ -2,9 +2,9 @@ exports.init = (conn, mongoose) ->
   Grid = require 'gridfs-stream'
   Grid.mongo = mongoose.mongo
   GridStore = mongoose.mongo.GridStore
-  StreamGridFile = require('./toolbox.js').StreamGridFile
+  StreamGridFile = require('./toolbox').StreamGridFile
 
-  model = require('./model.js').init(mongoose)
+  model = require('./model').init(mongoose)
 
   gfs = Grid conn.db
   gfs.exist = GridStore.exist.bind gfs, conn.db
@@ -45,4 +45,7 @@ exports.init = (conn, mongoose) ->
 
   @goHome =  (req, res) ->
     res.render 'home'
+
+  @login = (req, res) ->
+    res.render 'login'
   this

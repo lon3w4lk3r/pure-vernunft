@@ -16,6 +16,11 @@
         "mongodb": "1.4.3",
         "mongoose": "3.8.9",
         "step": "0.0.5",
-        "passport-google": "0.3.0"
+        "passport": "0.2.0",
+        "passport-google": "0.3.0",
+        "cookie-parser": "1.0.1",
+        "express-session": "1.0.4",
+        "body-parser": "1.0.2",
+        "method-override": "1.0.0"
     }
 }

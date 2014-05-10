@@ -8,14 +8,14 @@ block content
             p
             #songs
                 #song(ng-repeat="song in vm.songs track by $index")
+                    span
+                        input(type='button' value='Abspielen' ng-click='vm.playSong($index)')
                     b Title:
                     span {{song.title}}
                     b Artist:
                     span {{song.artist}}
                     b Album:
                     span {{song.album}}
-                    span
-                        input(type='button' value='Abspielen' ng-click='vm.playSong($index)')
                     span
                         input(type='button' value='Löschen' ng-click='vm.deleteSong($index)')
         #player
