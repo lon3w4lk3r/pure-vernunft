@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    #music(ng-controller="MusicCtrl")
+        #upload
+            input#file(ng-file-select type='file' multiple)
+        #library
+            p
+            #songs
+                #song(ng-repeat="song in vm.songs track by $index")
+                    b Title:
+                    span {{song.title}}
+                    b Artist:
+                    span {{song.artist}}
+                    b Album:
+                    span {{song.album}}
+                    span
+                        input(type='button' value='Abspielen' ng-click='vm.playSong($index)')
+                    span
+                        input(type='button' value='Löschen' ng-click='vm.deleteSong($index)')
+        #player
+            audio#musicPlayer(controls style='width:100%;position:fixed;bottom:20px')
