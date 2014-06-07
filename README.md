@@ -17,3 +17,5 @@ About the architecture:
  * gridfs-stream to stream binary files
  * mongodb with schemas, using mongoose
  * id3 for reading mp3 metadata
+
+Licensed under The MIT License.
